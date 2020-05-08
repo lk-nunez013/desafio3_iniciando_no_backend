@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div id="wrapper">
+  <h1>Músicas</h1>
+</div>
+<section class="cards">
+  {% for item in items%}
+  <div class="card" id="{{item.id}}">
+    <div class="img-ctn">
+      <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+    </div>
+    <div class="card-content">
+      <div class="title">{{item.title}}</div>
+      <div class="info">
+        <p class="time">{{item.duration}}</p>
+        <p class="vocal">{{item.vocal}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+<div class="modal-overlay">
+  <div class="modal">
+    <a class="close-modal">
+      <i class="material-icons">close</i>
+    </a>
+    <div class="modal-content">
+      <!-- vídeo aqui! -->>
+      <iframe src="" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+
+
+{% endblock %}
